@@ -1,14 +1,16 @@
 import dva from 'dva';
-import './index.css';
+import createHistory from 'history/createBrowserHistory';
 import createLoading from 'dva-loading';
+import { message } from 'antd';
+import './index.css';
+
+const ERROR_MSG_DURATION = 3; // 3 秒
 
 // 1. Initialize
 const app = dva({
-  initialState: {
-    products: [
-      { name: 'dva', id: 1 },
-      { name: 'antd', id: 2 },
-    ],
+  history: createHistory(),
+  onError(e) {
+    message.error(e.message, ERROR_MSG_DURATION);
   },
 });
 
@@ -16,10 +18,7 @@ const app = dva({
 app.use(createLoading());
 
 // 3. Model
-// app.model(require('./models/example'));
-app.model(require('./models/products'));
-
-app.model(require('./models/users'));
+// Moved to router.js
 
 // 4. Router
 app.router(require('./router'));

@@ -1,9 +1,6 @@
-
 export default {
   "entry": "src/index.js",
-  "outputPath": "./dist",
   "disableCSSModules": false,
-  "cssModulesExclude": [],
   "publicPath": "/",
   "theme": {
     "@primary-color": "#1DA57A",
@@ -12,26 +9,33 @@ export default {
     "@font-size-base": "16px",
     "@line-height-base": "1.2"
   },
+  "autoprefixer": null,
   "proxy": {
     "/api": {
       "target": "http://jsonplaceholder.typicode.com/",
       "changeOrigin": true,
-      "pathRewrite": { "^#/api" : "" }
+      "pathRewrite": {"^/api": ""}
     }
   },
+  "extraBabelPlugins": [
+    "transform-runtime",
+    ["import", {"libraryName": "antd", "style": true}]
+  ],
   "env": {
     "development": {
       "extraBabelPlugins": [
-        "dva-hmr",
-        "transform-runtime",
-        ["import", {"libraryName": "antd", "style": true}]
-      ]
-    },
-    "production": {
-      "extraBabelPlugins": [
-        "transform-runtime",
-        ["import", {"libraryName": "antd", "style": true}]
+        "dva-hmr"
       ]
     }
+  },
+  "xdllPlugin": {
+    "exclude": [
+      "babel-runtime"
+    ],
+    "include": [
+      "dva/router",
+      "dva/saga",
+      "dva/fetch"
+    ]
   }
 }
