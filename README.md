@@ -13,22 +13,26 @@
 
 【参考资料】
 
- 推荐网址
- 
-[dva官网](https://github.com/dvajs/dva)
+推荐网址
+react 的[state](http://www.runoob.com/react/react-state.html) 、[props](http://www.runoob.com/react/react-props.html)、[10个生命周期](http://note.youdao.com/share/?id=c70819126575dc410fb59094cd4d1b88&type=note#/)、[refs](http://www.runoob.com/react/react-props.html)
 
-[dva-cli官网](https://github.com/dvajs/dva-cli)
+10分钟学会react + dva [入门](http://www.jianshu.com/p/69f13e9123d9)
+
+dva系列开发可参考: [sorrycc的git网站](https://github.com/sorrycc)
+
+访问[dva官网](https://github.com/dvajs/dva)、[antd官网](https://ant.design/docs/react/practical-projects-cn)
+
+基于dva-cli创建项目，最好了解[配置方式](https://github.com/dvajs/dva-cli)
 
 [dva中文官网](https://github.com/dvajs/dva/blob/master/README_zh-CN.md)
-
-[sorrycc git 地址](https://github.com/sorrycc)
 
 了解dva的 [8个概念](https://github.com/dvajs/dva/blob/master/docs/Concepts_zh-CN.md)，及他们如何串联
 
 12步30分钟 [CURD应用](https://github.com/sorrycc/blog/issues/18)
 
-roadhog的[配置](https://github.com/sorrycc/roadhog#配置)
+详细可roadhog的[配置](https://github.com/sorrycc/roadhog#配置)
 
 [atool-build + dora 到 roadhog](https://github.com/sorrycc/blog/issues/17)
 
+前端跨域[方案](http://www.jianshu.com/p/2fde9e7df2f9)
 
