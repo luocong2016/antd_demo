@@ -1,3 +1,5 @@
+import proxy from './proxy.config.js';
+
 export default {
   "entry": "src/index.js",
   "disableCSSModules": false,
@@ -11,11 +13,7 @@ export default {
   },
   "autoprefixer": null,
   "proxy": {
-    "/api": {
-      "target": "http://jsonplaceholder.typicode.com/",
-      "changeOrigin": true,
-      "pathRewrite": {"^/api": ""}
-    }
+    ...proxy
   },
   "extraBabelPlugins": [
     "transform-runtime",

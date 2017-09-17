@@ -33,7 +33,7 @@ npm run build
 ```
 
 ## 【参考资料】
-推荐网址
+
 react 的[state](http://www.runoob.com/react/react-state.html) 、[props](http://www.runoob.com/react/react-props.html)、[10个生命周期](http://note.youdao.com/share/?id=c70819126575dc410fb59094cd4d1b88&type=note#/)、[refs](http://www.runoob.com/react/react-props.html)
 
 10分钟学会react + dva [入门](http://www.jianshu.com/p/69f13e9123d9)
@@ -52,6 +52,8 @@ dva系列开发可参考: [sorrycc的git网站](https://github.com/sorrycc)
 详细可参考roadhog的[配置](https://github.com/sorrycc/roadhog#配置)
 
 [atool-build + dora 到 roadhog](https://github.com/sorrycc/blog/issues/17)
+
+dva框架使用[mock.js](http://www.cnblogs.com/tjc1996/p/6795585.html)数据模拟 + [fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Basic_concepts)请求数据
 
 [前端跨域方案](http://www.jianshu.com/p/2fde9e7df2f9)
 
