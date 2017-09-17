@@ -44,7 +44,6 @@ dva系列开发可参考: [sorrycc的git网站](https://github.com/sorrycc)
 
 基于dva-cli创建项目，最好了解[配置方式](https://github.com/dvajs/dva-cli)
 
-
 了解dva的 [8个概念](https://github.com/dvajs/dva/blob/master/docs/Concepts_zh-CN.md)，及他们如何串联
 
 12步30分钟 [CURD应用](https://github.com/sorrycc/blog/issues/18)
@@ -54,6 +53,8 @@ dva系列开发可参考: [sorrycc的git网站](https://github.com/sorrycc)
 [atool-build + dora 到 roadhog](https://github.com/sorrycc/blog/issues/17)
 
 dva框架使用[mock.js](http://www.cnblogs.com/tjc1996/p/6795585.html)数据模拟 + [fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Basic_concepts)请求数据
+
+[mock.js速查](http://mockjs.com/examples.html)
 
 [前端跨域方案](http://www.jianshu.com/p/2fde9e7df2f9)
 
