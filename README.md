@@ -11,6 +11,22 @@
 - 配置简单，基于 JSON，比如禁用 CSS Modules 只要配"disableCSSModules": true
 - 黑盒升级，就算之后 roadhog 换成 rollup 或其他的，用户也不需要更改配置
 
+## PS:解决dora不能双开或多开问题
+```
+修改每个项目中：
+  -node_modules
+    -dora-plugin-proxy
+      -node_modules
+        -dora-anyproxy
+         -lib
+          -util.js
+          
+修改文件 lib/util.js 第59行
+var dirNameWildCard = CACHE_DIR_PREFIX + "*";
+修改为
+var dirNameWildCard = CACHE_DIR_PREFIX + "abcd"; #abcd 可以修改成固定项目名
+```
+
 ## 项目运行
 1. 克隆项目
 ```
