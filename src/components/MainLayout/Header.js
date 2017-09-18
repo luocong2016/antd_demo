@@ -15,8 +15,8 @@ function Header({ location }) {
       <Menu.Item key="/">
         <Link to="/"><Icon type="home" />Home</Link>
       </Menu.Item>
-      <Menu.Item key="/404">
-        <Link to="/page-you-dont-know"><Icon type="frown-circle" />404</Link>
+      <Menu.Item key="/products">
+        <Link to="/products"><Icon type="frown-circle" />products</Link>
       </Menu.Item>
       <Menu.Item key="/antd">
         <a href="https://github.com/dvajs/dva">dva</a>
