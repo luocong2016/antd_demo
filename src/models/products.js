@@ -11,8 +11,9 @@ export default {
     ],
   },
   reducers: {
-    'delete'(state, { payload: id }) {
-      return state.filter(item => item.id !== id);
+    delete(state, { payload: id }) {
+      const { productsList = [] } = state
+      return { ...state, productsList:productsList.filter(item => item.id !== id) };
     },
   },
 };
