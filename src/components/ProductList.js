@@ -1,29 +1,29 @@
 /**
  * Created by Lutz on 2017/9/15 0015.
  */
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes } from 'react';
 import { Table, Popconfirm, Button } from 'antd';
 
 const ProductList = ({ onDelete, products }) => {
-  console.log(onDelete, products)
-  const columns = [{
-    title: 'Name',
-    dataIndex: 'name',
-  }, {
-    title: 'Actions',
-    render: (text, record) => {
-      return (
-        <Popconfirm title="Delete?" onConfirm={() => onDelete(record.id)}>
-          <Button>Delete</Button>
-        </Popconfirm>
-      );
-    },
-  }];
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+    }, {
+      title: 'Actions',
+      render: (text, record) => {
+        return (
+          <Popconfirm title="Delete?" onConfirm={() => onDelete(record.id)}>
+            <Button>Delete</Button>
+          </Popconfirm>
+        );
+      },
+    }];
   return (
     <Table
       dataSource={products}
       columns={columns}
+      rowKey={record => record.id}
     />
   );
 };
