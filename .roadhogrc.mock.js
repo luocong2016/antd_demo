@@ -5,4 +5,6 @@ require('fs').readdirSync(require('path').join(__dirname + '/mock')).forEach(fun
   Object.assign(mock,require('./mock/' + file))
 })
 
+console.log(mock)
+
 module.exports = mock

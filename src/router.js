@@ -20,10 +20,17 @@ function RouterConfig({ history, app }) {
     component: () => import('./routes/Products'),
   });
 
+  const Todo = dynamic({
+    app,
+    models: () => [import('./models/todo')],
+    component: () => import('./routes/Todo'),
+  });
+
   return (
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={IndexPage} />
+        <Route exact path="/todo" component={Todo} />
         <Route exact path="/users" component={Users} />
         <Route exact path="/products" component={Products} />
       </Switch>
