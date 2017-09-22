@@ -47,6 +47,20 @@ npm run start
 ```
 npm run build
 ```
+## 快速开发
+### 用dva-cli 生成组件
+```
+## create router
+dva g router [componentName]
+
+## create model & service
+dva g model [componentName]
+    + loading: state.loading.models.[componentName]
+
+## crate componets
+dva g component [ComponentName/ComponentName]
+    
+```
 
 ## 【参考资料】
 

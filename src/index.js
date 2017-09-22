@@ -14,7 +14,7 @@ const app = dva({
   },
 });
 
-// 2. Plugins
+// 2. use Plugins
 app.use(createLoading());
 
 // 3. Model
