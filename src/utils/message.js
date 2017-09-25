@@ -40,7 +40,7 @@ function warning(title, content) {
   });
 }
 
-export default {
+module.exports = {
   info,
   success,
   error,

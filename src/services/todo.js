@@ -3,16 +3,10 @@
  */
 import fetch from 'dva/fetch';
 
-export function async query() {
-  return await fetch('/todo', {
+export function query() {
+  return fetch('/todo', {
     method: 'POST',
     mode: 'cors',
     credentials: 'include',
-  }).then((response) => {
-    response.json().then((data) => {
-      console.log(data);
-    }).catch((e) => {
-      console.log('Oops, error');
-    });
-  });
+  }).then(response => response.json());
 }
