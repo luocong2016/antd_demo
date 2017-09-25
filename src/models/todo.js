@@ -19,6 +19,7 @@ export default {
       const result = yield call(todoService.query);
       if (!result || !result.success) {
         error('警告', '获取数据非法');
+        return;
       }
       yield put({
         type: 'save',
