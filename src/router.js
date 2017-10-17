@@ -14,25 +14,32 @@ function RouterConfig({ history, app }) {
     component: () => import('./routes/Users'),
   });
 
-  const Products = dynamic({
-    app,
-    models: () => [import('./models/products')],
-    component: () => import('./routes/Products'),
-  });
-
-  const Todo = dynamic({
-    app,
-    models: () => [import('./models/todo')],
-    component: () => import('./routes/Todo'),
-  });
+  const routes = [
+    {
+      path: '/todo',
+      models: () => [import('./models/todo')],
+      component: () => import('./routes/Todo'),
+    }, {
+      path: '/products',
+      models: () => [import('./models/products')],
+      component: () => import('./routes/Products'),
+    }, {
+      path: '/table',
+      models: () => [import('./models/table')],
+      component: () => import('./routes/Tables'),
+    },
+  ];
 
   return (
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={IndexPage} />
-        <Route exact path="/todo" component={Todo} />
         <Route exact path="/users" component={Users} />
-        <Route exact path="/products" component={Products} />
+        {
+         routes.map(({ path, ...dynamics }, key) => (
+           <Route key={key} exact path={path} component={dynamic({ app, ...dynamics })} />
+         ))
+         }
       </Switch>
     </Router>
   );

@@ -14,6 +14,7 @@
     "no-bitwise": [0],
     "no-cond-assign": [0],
     "no-else-return": [0],
+    "no-extra-semi": [2],
     "no-nested-ternary": [0],
     "no-restricted-syntax": [0],
     "no-use-before-define": [0],
@@ -22,7 +23,8 @@
     "react/jsx-no-bind": [0],
     "react/prefer-stateless-function": [0],
     "react/prop-types": [0],
-    "require-yield": [1]
+    "require-yield": [1],
+    "semi": [2, "always"]
   },
   "parserOptions": {
     "ecmaFeatures": {

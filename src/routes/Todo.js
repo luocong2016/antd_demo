@@ -23,6 +23,7 @@ class Todo extends React.Component {
   }
   render() {
     const { date } = this.state;
+    const _this =this;
     console.log(this.props)
     return (
       <div style={{ margin: '50px' }}>
@@ -40,6 +41,10 @@ class Todo extends React.Component {
         </div>
         <DatePicker onChange={value => this.handleChange(value)} />
         <div style={{ marginTop: 20 }}>当前日期：{ date.toLocaleString() }</div>
+        <div>
+          <h1>mock.js数据</h1>
+          {JSON.stringify(_this.props.todo)}
+        </div>
       </div>
     );
   }
