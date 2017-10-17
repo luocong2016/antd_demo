@@ -47,6 +47,11 @@ npm run start
 ```
 npm run build
 ```
+```
+优先级关系
+.roadhogrc > .roadhogrc.js > .roadhogrc.mock.js
+```
+
 ## 快速开发
 ### 用dva-cli 生成组件
 ```
