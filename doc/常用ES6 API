@@ -1,0 +1,28 @@
+1. for...of
+```
+let obj = {
+  first: 'Lutz',
+  last: 'Hello',
+}
+for(let key of Object.keys(obj)){
+   console.log(obj[key])
+}
+```
+
+2. find
+```
+let arr = [
+{
+  a: 'A',
+  b: 'B',
+}, {
+  a: 'C',
+  b: 'D',
+}];
+
+arr.find(function(items){
+  if(items['a'] == 'C'){
+    return 'C';
+  }
+})
+```
