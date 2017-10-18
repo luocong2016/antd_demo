@@ -4,6 +4,12 @@ let obj = { first: 'Lutz', last: 'Hello'}
 for(let key of Object.keys(obj)){
    console.log(obj[key])
 }
+
+//arr.entries
+let arr = [1, 2, 3, 5] 
+for(let key of arr.entries()){
+  console.log(key) //[key,value]
+}
 ```
 
 2. find

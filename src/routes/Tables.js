@@ -29,6 +29,9 @@ class Tables extends React.Component {
         key: 'address',
       }];
     const rowSelection = {
+      type: 'radio',
+      hideDefaultSelections: false,
+      selections: false,
       onChange: (selectedRowKeys, selectedRows) => {
         console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
       },
@@ -38,8 +41,8 @@ class Tables extends React.Component {
       onSelectAll: (selected, selectedRows, changeRows) => {
         console.log(selected, selectedRows, changeRows);
       },
-    };
-    return <Table columns={columns} rowSelection={rowSelection} dataSource={data} />;
+    };// /*rowSelection={rowSelection}*/
+    return <Table columns={columns} dataSource={data} />;
   }
 }
 
