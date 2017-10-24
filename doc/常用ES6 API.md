@@ -6,10 +6,12 @@ for(let key of Object.keys(obj)){
 }
 
 //arr.entries
-let arr = [1, 2, 3, 5] 
+let arr = [1, 2, 3, 5]
+arr.includes(2) //true
 for(let key of arr.entries()){
   console.log(key) //[key,value]
 }
+
 ```
 
 2. find

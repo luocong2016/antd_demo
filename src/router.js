@@ -27,6 +27,12 @@ function RouterConfig({ history, app }) {
       path: '/table',
       models: () => [import('./models/table')],
       component: () => import('./routes/Tables'),
+    }, {
+      path: '/transfer',
+      component: () => import('./Transfer/TransferDemo'),
+    }, {
+      path: '/tree',
+      component: () => import('./Transfer/TreeDemo'),
     },
   ];
 
