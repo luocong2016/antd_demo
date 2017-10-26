@@ -16,3 +16,14 @@ import { Link } from 'dva/router';
      Button>Btn</Button>
 </Link>
 ```
+
+### 跳转事件
+
+```
+//关闭默认事件
+event.preventDefault()
+
+//关闭冒泡
+event.stopPropagation()
+
+```

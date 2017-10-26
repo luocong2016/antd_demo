@@ -57,7 +57,6 @@ npm run build
 ```
 ## create router
 dva g router [componentName]
-
 ## create model & service
 dva g model [componentName]
     + loading: state.loading.models.[componentName]
