@@ -2,7 +2,7 @@
  * Created by Lutz on 2017/10/26.
  */
 
-import React from 'react'
+import React,{DOM} from 'react'
 import { Button } from 'antd'
 import { wrapComponent } from './wrapComponent.js'
 const WapComponent = wrapComponent(Button)
