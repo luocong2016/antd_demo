@@ -33,6 +33,9 @@ function RouterConfig({ history, app }) {
     }, {
       path: '/tree',
       component: () => import('./Transfer/TreeDemo'),
+    }, {
+      path: '/btn',
+      component: () => import('./Btn/Btn'),
     },
   ];
 
