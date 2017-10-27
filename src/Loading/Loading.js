@@ -3,6 +3,7 @@
  */
 import './frozen.css'
 import React, { PropTypes } from 'react'
+import ReactDOM from 'react-dom'
 import styleMaps from './styleMaps'
 
 const loadingCN = styleMaps.loadingCN

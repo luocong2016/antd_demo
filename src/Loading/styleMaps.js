@@ -2,7 +2,7 @@
  * Created by Lutz on 2017/10/27.
  */
 
-modules.exports = {
+export default {
   globalCN: {},
   loadingCN: {
     block: {

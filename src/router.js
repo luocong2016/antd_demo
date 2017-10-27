@@ -36,6 +36,9 @@ function RouterConfig({ history, app }) {
     }, {
       path: '/btn',
       component: () => import('./Btn/Btn'),
+    }, {
+      path: '/loading',
+      component: () => import('./Loading/LoadingDemo'),
     },
   ];
 
