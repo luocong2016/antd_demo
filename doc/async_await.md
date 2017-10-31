@@ -52,7 +52,7 @@ export default class Demo extends React.Component{
   
   render(){
     console.log('render')
-    const { reactStargazersCount: '', reduxStargazersCount: '' } = this.state
+    const { reactStargazersCount='', reduxStargazersCount='' } = this.state
     return (<div>
       <div>React stargazers count: {this.state.reactStargazersCount}</div>
       <div>Redux stargazers count: {this.state.reduxStargazersCount}</div>
