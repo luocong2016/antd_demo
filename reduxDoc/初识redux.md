@@ -43,3 +43,36 @@ store.dispatch({
 //结合Action Creator
 store.dispatch(addTodo('Learn Redux'))
 ```
+
+3.7 Reducer
+Store 收到 Action 后，必须给出一个新的State,这样 View 才会发生变化。这种 State 的计算过程叫做 Reducer
+Reducer 是一个函数，接受 Action 和当前 State 作为参数，返回一个新的 State
+```
+const reducer = (state, action) => {
+  //...
+  return new_state
+}
+```
+整个应用的初始状态，可以作为 State 的默认值。下面是一个实际的例子。
+```
+const defaultState = 0
+const reducer = (state = defaultState, action) => {
+  switch(action.type){
+    case: 'ADD':
+      return state + action.payload
+    default:
+      return state
+  }
+}
+
+const state = reducer(1, {
+  type: 'ADD',
+  payload: 2
+})
+```
+在实际应用中 Reducer 函数不用像上面一样手动调用， store.dispatch 方法会触发 Reducer 的自动执行。
+```
+import { createStore } from 'redux'
+const store = createStore(reducer)
+```
+createStore接受 Reducer 作为参数，生成一个新的 Store。以后每当store.dispatch发送过来一个新的 Action，就会自动调用 Reducer，得到新的 State。
