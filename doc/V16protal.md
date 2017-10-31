@@ -1,3 +1,7 @@
+## 为什么React需要传送门
+> render到一个组件里面去，实际改变的是网页上另一处DOM结构
+
+
 在V16之前，实现“传送门”，要用到两个React API
 - unstable_renderSubtreeIntoContainer
 - unmountComponentAtNode
