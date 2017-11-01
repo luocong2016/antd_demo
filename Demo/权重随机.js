@@ -35,6 +35,7 @@ function eq(arr1 = [], arr2 = []){
   return false
 }
 
+//随机生成对应的id
 function weightRandom(curVal = [], randomConfig =[{id:1,weight:2},{id:2,weight:1}]) {//weight 相当于randomList中 id 出现的次数
   let randomList = [] //如1的权重为2，则插入2个； 2的权重为1,则插入1个
   for (let i in randomConfig) {
