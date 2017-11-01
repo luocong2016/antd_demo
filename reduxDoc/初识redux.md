@@ -134,7 +134,7 @@ unsubscribe()
 
 ```
 import { createStore } from 'redux'
-const { getState, dispatch, subscribe} = createStore(reducer)
+const { getState, dispatch, subscribe } = createStore(reducer)
 ```
 createStore方法还可以接收第二个参数，标识State的最初状态。通常是服务器给出的。
 ```
@@ -174,7 +174,7 @@ const chatReducer = (state = defaultState, action = {}) => {
       return Object.assign({}, state, {userName: payload})
     default:
       return state;
-    }
+  }
 }
 ```
 Redux 提供了一个combineReducers方法，用于 Reducer 的拆分。
@@ -206,14 +206,63 @@ const reducer = (state = {}, action) => {
 ```
 combineReducers的简单实现
 ```
-const combineReducers = reducers => {
-  return (state = {}, action) => {
-    return Object.keys(reducers).reduce(
-      (nextState, key) => {
-        nextState[key] = reducers[key](state[key], acstion)
-        return nextState
-      }
-    )
+const combineReducers = reducers => (state = {}, action) => Object.keys(reducers).reduce(
+  (nextState, key) => {
+    nextState[key] = reducers[key](state[key], action)
+    return nextState
+  }
+)
+```
+
+## 工作流程
+```
+// 首先触发 Action
+store.dispatch(action)
+
+// Store 自动调用 Reducer
+const nextState = todoApp(previousState, action)
+
+// 设置监听函数
+const unsubscribe = store.subscribe(listener) // 解除监听 unsubscribe()
+
+const listerner = () => component.setState(store.getState())
+
+```
+
+## 实例：计数器
+```
+//component
+const Counter = ({value}) => (<div>
+    <h2>{value}</h2>
+    <button onClick={onIncrement}>+</button>
+    <button onClick={onDecrement}>-</button>
+</div>)
+
+const reducer = (state = 0, action) => {
+  switch(action.type){
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
+    default:
+      return state
   }
 }
+
+const store = createStore(reducer)
+
+const render = () => {
+  ReactDOM.render(
+    <Counter 
+      value={store.getState()}
+      onIncrement={() => store.dispatch({type: 'INCREMENT'})}
+      onDecrement={() => store.dispatch({type: 'DECREMENT'})}
+    />,
+    document.querySelector('#root')
+  )
+}
+
+const unsubscribe = store.subscribe(render)
+render()
+
 ```
