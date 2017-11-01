@@ -132,6 +132,7 @@ class VisibleTodoList extends React.Component{
     super(props)
     this.state = {}
   }
+  
   static PropTypes = {
     childContextType: PropTypes.shape({
       store: PropTypes.object
