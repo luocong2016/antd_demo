@@ -43,14 +43,14 @@ function weightRandom(curVal = [], randomConfig =[{id:1,weight:2},{id:2,weight:1
       randomList.push(randomConfig[i].id)
     }
   }
-  if(eq(curVal, randomList)){
+  if(eq(curVal, randomList)){ //如果都没禁用就会调用
     console.log('奖品都给胖子拿走了。')
     return
   }
 
   let randomValue = randomList[Math.floor(Math.random() * randomList.length)] //在randomList中随机选取一个
   if (curVal.length) {
-    while (curVal.indexOf(randomValue) != -1) { //避开固定参数比如：2的出现weightRandom([2])
+    while (curVal.indexOf(randomValue) != -1) { //禁用固定参数，比如：2的出现weightRandom([2])
       randomValue  = randomList[Math.floor(Math.random() * randomList.length)]
     }
   }
