@@ -49,3 +49,11 @@ let arr = [1,2,33,2,3,,4,45];
 arr.sort(); //[1, 2, 2, 3, 33, 4, 45, empty × 1] -> length=8
 arr.sort((a, b) => a -b); //[1, 2, 2, 3, 4, 33, 45, empty × 1] -> length=8  <-> arr
 ```
+
+## Array.prototype.reduce()
+> array.reduce(function(total, currentValue [,currentIndex][,arr]){ //... }[, initialValue])
+```
+const numbers = [1, 2, 44, 12, 4]
+numbers.reduce((total, num) => total + num, 0) //63
+
+```

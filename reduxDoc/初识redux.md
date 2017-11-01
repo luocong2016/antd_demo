@@ -140,3 +140,80 @@ createStore方法还可以接收第二个参数，标识State的最初状态。�
 ```
 const store = createStore(todoAPP, window.STATE_FROM_SERVER)
 ```
+下面是 createStore 方法是一个简单实现
+```
+const crateStore = reducer => {
+  let state, listeners = []
+  const getState = () => state
+  const dispatch = (action) => {
+    state = reducer(state, action)
+    listeners.forEach(listener => listener())
+  }
+  const subscribe = listener =>{
+    listeners.push(listener)
+    return () => {
+      listeners = listeners.filter(item => item !== listener)
+    }
+  }
+  dispatch({})
+  
+  return {getState, dispatch, subscribe}
+}
+```
+
+## Reducer的拆分
+```
+const chatReducer = (state = defaultState, action = {}) => {
+  const { type, payload } = action
+  switch(type){
+    case ADD_CHAT:
+      return Object.assign({}, state, {chatLog: state.chatLog.concat(payload)})
+    case CHANGE_STATUS:
+      return Object.assign({}, state, {statusMessage: payload})
+    case CHANGE_USERNAME:
+      return Object.assign({}, state, {userName: payload})
+    default:
+      return state;
+    }
+}
+```
+Redux 提供了一个combineReducers方法，用于 Reducer 的拆分。
+```
+import { combineReducers } from 'redux'
+const chatReducer = combineReducers({
+  chatLog,
+  statusMessage,
+  userName
+})
+export default todoApp
+```
+State 的属性名必须与子 Reducer 同名。如果不同名，就要采用下面的写法。
+```
+const reducer = combineReducers({
+  a: doSomethingWithA,
+  b: processB,
+  c: c
+})
+
+// 等价
+const reducer = (state = {}, action) => {
+  return {
+    a: doSomethingWithA(state.a, action),
+    b: processB(state.b, action),
+    c: c(state.c, action)
+  }
+} 
+```
+combineReducers的简单实现
+```
+const combineReducers = reducers => {
+  return (state = {}, action) => {
+    return Object.keys(reducers).reduce(
+      (nextState, key) => {
+        nextState[key] = reducers[key](state[key], acstion)
+        return nextState
+      }
+    )
+  }
+}
+```
