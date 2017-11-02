@@ -55,8 +55,8 @@ export default class ES6React extends React.Component {
   }
 
   render() {
-    const { hi = 'hi', openBool = false } = this.state;
-    const { open = false } = this.props;
+    const { hi = 'hi', openBool = true } = this.state;
+    const { open = true } = this.props;
 
     return (<div ref="div">
       <input type="text" disabled={!openBool} placeholder={`open:${open}`} />
