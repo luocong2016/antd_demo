@@ -8,11 +8,7 @@ import ReactDOM from 'react-dom';
 export default class ES6React extends React.Component {
   constructor(props, context) {
     super(props);
-    console.log('context:', context);
-    this.state = {
-      openBool: true,
-      hi: '',
-    };
+    this.state = {};
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -26,14 +22,6 @@ export default class ES6React extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
-    this.setState({ open: !this.state.open });
-  }
-
-  setTheState(hi) {
-    this.setState({ hi });
-  }
-
-  forceItUpdate() {
     this.forceUpdate();
   }
 
@@ -43,6 +31,7 @@ export default class ES6React extends React.Component {
 
   componentDidMount() {
     console.log('componentDidMount');
+    console.log(this.refs.div); // 获取节点document.getElementById('div')
   }
 
   componentWillReceiveProps(newProps) {
@@ -69,7 +58,7 @@ export default class ES6React extends React.Component {
     const { hi = 'hi', openBool = false } = this.state;
     const { open = false } = this.props;
 
-    return (<div>
+    return (<div ref="div">
       <input type="text" disabled={!openBool} placeholder={`open:${open}`} />
     </div>);
   }
