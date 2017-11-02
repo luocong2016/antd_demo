@@ -12,11 +12,7 @@ function noRepeat(arr = []){
   }
   let map={}
   for(let i=arr.length; i>=0; --i){
-    if(arr[i] in map){ //如果不存在会返回 false
-      arr.splice(arr[i],1) //存在抛出数组元素
-    }else{
-      map[arr[i]] = true;
-    }
+    (arr[i] in map)? arr.splice(arr[i], 1):(map[arr[i]] = true) //不存? 存在抛出数组元素: 写入对象
   }
   return arr;
 }
