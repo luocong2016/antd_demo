@@ -19,12 +19,13 @@ function noRepeat(arr = []){
 
 //判断数组元素是否相等
 function eq(arr1 = [], arr2 = []){
+  //排序
   arr1 = arr1.sort((a, b) => a - b)
   arr2 = arr2.sort((a, b) => a - b)
-
+  //去重
   arr1 = noRepeat(arr1)
   arr2 = noRepeat(arr2)
-
+  //字符串比较
   if(!(arr1 == arr2) && JSON.stringify(arr1) == JSON.stringify(arr2)){
     return true
   }
