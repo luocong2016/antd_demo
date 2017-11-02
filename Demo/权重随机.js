@@ -29,7 +29,7 @@ function eq(arr1 = [], arr2 = []){
   arr1 = noRepeat(arr1)
   arr2 = noRepeat(arr2)
   //字符串比较
-  return JSON.stringify(arr1) == JSON.stringify(arr2)? true: false
+  return JSON.stringify(arr1) == JSON.stringify(arr2)
 }
 
 //随机生成对应的id
