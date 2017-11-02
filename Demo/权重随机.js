@@ -11,7 +11,7 @@ function noRepeat(arr = []){
     return []
   }
   let map={}
-  for(let i=arr.length; i>=0; --i){
+  for(let i=0; i<arr.length; i++){
     (arr[i] in map)? arr.splice(arr[i], 1):(map[arr[i]] = true) //不存? 存在抛出数组元素: 写入对象
   }
   return arr;
@@ -55,4 +55,4 @@ function weightRandom(curVal = [], randomConfig =[{id:1,weight:2},{id:2,weight:1
   return randomValue
 }
 
-weightRandom([1])
+weightRandom()
