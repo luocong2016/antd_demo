@@ -39,6 +39,9 @@ function RouterConfig({ history, app }) {
     }, {
       path: '/loading',
       component: () => import('./Loading/LoadingDemo'),
+    }, {
+      path: '/ES6React',
+      component: () => import('./ES6React'),
     },
   ];
 
