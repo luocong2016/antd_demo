@@ -7,14 +7,15 @@
 
 //数组去重
 function noRepeat(arr = []){
-  let map={};
-  if(arr && Array.isArray(arr)){
-    for(let i=arr.length; i>=0; --i){
-      if(arr[i] in map){
-        arr.splice(arr[i],1);
-      }else{
-        map[arr[i]] = true;
-      }
+  if(!Array.isArray(arr)){//不是数组返回空数组
+    return []
+  }
+  let map={}
+  for(let i=arr.length; i>=0; --i){
+    if(arr[i] in map){ //如果不存在会返回 false
+      arr.splice(arr[i],1) //存在抛出数组元素
+    }else{
+      map[arr[i]] = true;
     }
   }
   return arr;
