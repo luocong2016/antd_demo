@@ -1,8 +1,8 @@
 /*
 例如抽中物品1的权重为2，抽中物品2的权重1。那么，物品1的概率就是1/3，物品2的概率就是2/3。
-  实现的主要思想，是基于数组实现的。
+    实现的主要思想，是基于数组实现的。
 如下程序所示：
-  如1的权重为1，则在数组中插入1个1，2的权重为2，则插入两个2。再对数组[1,2,2]进行随机拿去，就能实现基于权重的随机数了。
+    如1的权重为1，则在数组中插入1个1，2的权重为2，则插入两个2。再对数组[1,2,2]进行随机拿去，就能实现基于权重的随机数了。
 */
 
 //数组去重
@@ -19,6 +19,9 @@ function noRepeat(arr = []){
 
 //判断数组元素是否相等
 function eq(arr1 = [], arr2 = []){
+  if(!(Array.isArray(arr1) && Array.isArray(arr2))){//如果其中一个不是arr, 返回false
+    return false
+  }
   //排序
   arr1 = arr1.sort((a, b) => a - b)
   arr2 = arr2.sort((a, b) => a - b)
@@ -26,21 +29,22 @@ function eq(arr1 = [], arr2 = []){
   arr1 = noRepeat(arr1)
   arr2 = noRepeat(arr2)
   //字符串比较
-  if(!(arr1 == arr2) && JSON.stringify(arr1) == JSON.stringify(arr2)){
+  if(JSON.stringify(arr1) == JSON.stringify(arr2)){
     return true
   }
-
   return false
 }
 
 //随机生成对应的id
 function weightRandom(curVal = [], randomConfig =[{id:1,weight:2},{id:2,weight:1}]) {//weight 相当于randomList中 id 出现的次数
   let randomList = [] //如1的权重为2，则插入2个； 2的权重为1,则插入1个
+
   for (let i in randomConfig) {
     for (let j = 0; j < randomConfig[i].weight; j++) {
       randomList.push(randomConfig[i].id)
     }
   }
+
   if(eq(curVal, randomList)){ //如果都禁用就会调用
     console.log('奖品都给胖子拿走了。')
     return
@@ -56,4 +60,4 @@ function weightRandom(curVal = [], randomConfig =[{id:1,weight:2},{id:2,weight:1
   return randomValue
 }
 
-weightRandom()
+weightRandom()//实例化
