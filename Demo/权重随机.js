@@ -40,7 +40,7 @@ function weightRandom(curVal = [], randomConfig =[{id:1,weight:2},{id:2,weight:1
       randomList.push(randomConfig[i].id)
     }
   }
-  if(eq(curVal, randomList)){ //如果都没禁用就会调用
+  if(eq(curVal, randomList)){ //如果都禁用就会调用
     console.log('奖品都给胖子拿走了。')
     return
   }
