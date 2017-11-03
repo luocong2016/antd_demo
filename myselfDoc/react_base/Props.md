@@ -2,6 +2,34 @@
 state 和 props 主要的区别在于 props 是不可变的，而 state 可以根据与用户交互来改变。
 这就是为什么有些容器组件需要定义 state 来更新和修改数据。
 而子组件只能通过 props 来传递数据。
+
+### this.props.children
+## 需要注意 this.props.children 有三种可能：
+1. 如果组件没有子节点 undefined
+2. 如果有一个子节点，数据类型：object
+3. 如果有多个子节点，数据类型：array
+```
+class NotesList extends React.Component{
+  render(){
+    return <ol>
+    {
+       React.Children.map(this.props.children, function (child) {
+         return <li>{child}</li>;
+       })
+    }
+    </ol>
+  }
+}
+
+ReactDOM.render(
+  <NotesList>
+    <span>hello</span>
+    <span>world</span>
+  </NotesList>,
+  document.body
+)
+```
+
 ```
 import React from 'react'
 import PropTypes from 'prop-types'
