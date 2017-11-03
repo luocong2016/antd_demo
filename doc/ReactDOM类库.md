@@ -19,7 +19,9 @@ export default class App extends React.Component{
     this.state = {}
   }
   
-  static PropTypes = {}
+  static defaultProps = {}
+  
+  static propTypes = {}
   
   render(){
     <div>{this.props.children}</div>
