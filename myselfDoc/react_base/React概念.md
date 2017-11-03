@@ -22,7 +22,7 @@ JSX 是一个看起来很像 XML 的 JavaScript 语法扩展。
 3. JSX中的注释使用{/**/}。
 4. React推荐内联样式(React会在指定元素数字后自动添加px)。 
 ```const myStyle = {fontSize: 100, color:'F00'}```
-5. JSX允许在模版中插入数组，数组会自动展开所有成员。 
+5. JSX允许在模版中插入数组，数组会自动展开所有成员。
 ```const arr = [<h2>Lutz-h2</h2>,<h2>自我编程</h2>]```
 ```
 1 import { render } from 'react-dom'
