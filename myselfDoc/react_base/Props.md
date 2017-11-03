@@ -79,7 +79,8 @@ static propTypes = {
   // 不可空的任意类型
   requiredAny: React.PropTypes.any.isRequired,
   
-  // 自定义验证器。如果验证失败需要返回一个 Error 对象。不要直接使用 `console.warn` 或抛异常，因为这样 `oneOfType` 会失效。
+  // 自定义验证器。如果验证失败需要返回一个 Error 对象。
+  // 不要直接使用 `console.warn` 或抛异常，因为这样 `oneOfType` 会失效。
   customProp: function(props, propName, componentName) {
     if (!/matchme/.test(props[propName])) {
       return new Error('Validation failed!');
