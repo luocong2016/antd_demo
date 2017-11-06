@@ -42,6 +42,9 @@ function RouterConfig({ history, app }) {
     }, {
       path: '/ES6React',
       component: () => import('./ES6React'),
+    }, {
+      path: '/Markdown',
+      component: () => import('./MyComponents/Markdown'),
     },
   ];
 

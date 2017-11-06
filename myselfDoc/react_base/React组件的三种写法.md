@@ -52,9 +52,9 @@ import ReactDOM from 'react-dom'
 
 export default class ES6React extends React.Component {
   constructor(props, context) {
-    super(props);
-    this.state = {};
-    this.handleClick = this.handleClick.bind(this);
+    super(props, context)
+    this.state = {}
+    this.handleClick = this.handleClick.bind(this)
   }
 
   static defaultProps = {
@@ -64,6 +64,8 @@ export default class ES6React extends React.Component {
   static propTypes = {
     open: PropTypes.bool.isRequired,
   }
+  
+  static contextTypes = {}
 
   handleClick(event) {
     event.preventDefault();

@@ -1,66 +1,57 @@
-/**
- * Created by Lutz on 2017/11/2.
- */
 import React from 'react';
-import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
-export default class ES6React extends React.Component {
+class Button extends React.Component {
   constructor(props, context) {
-    super(props);
+    super(props, context);
     this.state = {};
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  static defaultProps = {
-    open: false,
   }
 
   static propTypes = {
-    open: PropTypes.bool.isRequired,
+    children: PropTypes.string.isRequired,
   }
 
-  handleClick(event) {
-    event.preventDefault();
-    this.forceUpdate();
-  }
-
-  componentWillMount() {
-    console.log('componentWillMount');
-  }
-
-  componentDidMount() {
-    console.log('componentDidMount');
-    console.log(this.refs.div); // 获取节点document.getElementById('div')
-  }
-
-  componentWillReceiveProps(newProps) {
-    console.log('Component WILL RECEIVE PROPS!');
-  }
-
-  shouldComponentUpdate(newProps, newState) {
-    return true;
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    console.log('Component WILL UPDATE!');
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log('Component DID UPDATE!');
-  }
-
-  componentWillUnmount() {
-    console.log('Component WILL UNMOUNT!');
+  static contextTypes = {
+    color: PropTypes.any,
   }
 
   render() {
-    const { hi = 'hi', openBool = true } = this.state;
-    const { open = true } = this.props;
+    const { color = '#ccc' } = this.context
+    return <button style={{ background: color }}>{this.props.children}</button>;
+  }
+}
 
-    return (<div ref="div">
-      <input type="text" disabled={!openBool} placeholder={`open:${open}`} />
+class Message extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  static propTypes = {
+    text: PropTypes.string.isRequired,
+  }
+
+  render() {
+    return (<li>
+      <p>{this.props.text}</p>
+      <Button>Delete</Button>
+    </li>);
+  }
+}
+
+export default class MessageItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    const message = [{ text: 'Hello React' }, { text: 'Hello Redux' }];
+
+    return (<div>
+      <p>通过props将color逐层传递给Button组件</p>
+      { message.map((item, index) => <Message key={`list-${index}`} text={item.text} />) }
     </div>);
   }
 }
-/* ReactDOM.render(<ES6React />, document.getElementById('container')) */
