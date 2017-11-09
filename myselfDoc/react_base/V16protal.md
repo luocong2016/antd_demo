@@ -75,12 +75,7 @@ export default class Dialog extends React.Component{
   }
   
   render(){
-    return createPortal(
-      <div class="dialog">
-        {this.props.children}
-      </div>,
-      this.node
-    )
+    return createPortal(<div class="dialog">{this.props.children}</div>,this.node)
   }
 }
 ```
